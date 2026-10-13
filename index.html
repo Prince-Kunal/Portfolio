@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prince Kunal · AI/ML & Full-Stack Developer</title>
+<meta name="description" content="Prince Kunal: B.Tech CSE (AI & ML) student in Bengaluru building ML models, full-stack apps and AI security tools. Play the portfolio as a pixel platformer, or open recruiter mode.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Prince Kunal · AI/ML & Full-Stack Developer">
+<meta property="og:description" content="Play my portfolio as a pixel platformer, or open recruiter mode for the quick version.">
+<meta property="og:image" content="assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#161A33">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-screen="title">
+
+<!-- ============ TITLE SCREEN ============ -->
+<section id="title" class="screen" aria-label="Start screen">
+  <div class="title-stars" aria-hidden="true"></div>
+  <div class="title-inner">
+    <p class="eyebrow">PLAYER 1 · B.TECH CSE (AI &amp; ML) · CLASS OF 2029</p>
+    <canvas id="title-avatar" role="img" aria-label="Pixel art avatar of Prince Kunal"></canvas>
+    <h1 class="pixel-title">PRINCE<br>KUNAL</h1>
+    <p class="title-role">AI/ML &amp; full-stack developer · Bengaluru</p>
+    <div class="title-actions">
+      <button id="btn-start" class="btn btn-primary" type="button"><span class="blink" aria-hidden="true">▶</span> GAME MODE</button>
+      <a id="btn-recruiter" class="btn btn-secondary" href="#recruiter">RECRUITER MODE</a>
+    </div>
+    <p class="title-hint">In a hurry? Recruiter mode is the one-page version with my resume.</p>
+    <p class="title-controls" id="title-controls"></p>
+  </div>
+  <div class="title-ground" aria-hidden="true"></div>
+</section>
+
+<!-- ============ GAME MODE ============ -->
+<section id="game" class="screen" hidden aria-label="Game mode">
+  <canvas id="game-canvas" tabindex="-1" aria-label="Side-scrolling level: hit blocks to reveal skills, open terminals to see projects, reach the flag for contact details. Recruiter mode has the same content as text."></canvas>
+  <header class="hud">
+    <div class="hud-stats" aria-live="off">
+      <div><span class="hud-label">SCORE</span><span id="hud-score">000000</span></div>
+      <div><span class="hud-label">SKILLS</span><span id="hud-skills">0/14</span></div>
+      <div class="hud-opt"><span class="hud-label">BUGS FIXED</span><span id="hud-bugs">0</span></div>
+      <div class="hud-opt"><span class="hud-label">WORLD</span><span>1-1</span></div>
+    </div>
+    <nav class="hud-actions" aria-label="Game menu">
+      <button id="btn-sound" class="hud-btn" type="button" aria-pressed="false">SOUND: OFF</button>
+      <a class="hud-btn hud-opt" href="assets/Prince_Kunal_Resume.pdf" target="_blank" rel="noopener">RESUME</a>
+      <a class="hud-btn hud-btn-hot" href="#recruiter">RECRUITER MODE</a>
+    </nav>
+  </header>
+  <p id="hud-hint" class="hud-hint" hidden></p>
+  <div class="touch" id="touch" aria-hidden="true">
+    <div class="touch-pad">
+      <button type="button" data-key="left">◀</button>
+      <button type="button" data-key="right">▶</button>
+    </div>
+    <div class="touch-pad">
+      <button type="button" data-key="down" class="touch-b">B</button>
+      <button type="button" data-key="jump" class="touch-a">A</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECRUITER MODE ============ -->
+<main id="recruiter" class="screen recruiter" hidden></main>
+
+<!-- ============ POP-UP ============ -->
+<div id="modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <div class="modal-bar"><span id="modal-kicker"></span><button id="modal-close" class="modal-x" type="button" aria-label="Close">✕</button></div>
+    <div id="modal-body" class="modal-body"></div>
+  </div>
+</div>
+
+<noscript>
+  <p style="padding:24px;font-family:sans-serif;color:#fff">This portfolio needs JavaScript. You can still <a style="color:#F2C14E" href="assets/Prince_Kunal_Resume.pdf">download my resume (PDF)</a> or email kunalprince615@gmail.com.</p>
+</noscript>
+
+<script src="js/content.js"></script>
+<script src="js/sprites.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/game.js"></script>
+<script src="js/recruiter.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
